@@ -28,7 +28,7 @@ let s:ui        = "000000"
 let s:text      = "000000"
 let s:faded     = "666666" " faded text
 let s:inversed  = "ffffff" " inversed text
-let s:attractive= "aa6b3e"
+let s:attractive= "f4cf86" " b88853
 
 let s:bground   = "ffdab9"
 let s:accent    = "d3b695" " highlighted bground
@@ -54,6 +54,8 @@ call <sid>hi("ErrorMsg",        s:inversed, s:alert, "")
 
 " pseudos
 call <sid>hi("VertSplit",       s:bground, s:ui, "bold")
+call <sid>hi("WildMenu",        s:text, s:attractive, "bold")
+call <sid>hi("StatusLine",      "", "0a9dff", "bold")
 
 " syntax
 call <sid>hi("Comment",         s:faded, "", "")
