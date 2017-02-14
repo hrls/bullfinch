@@ -12,10 +12,10 @@ let g:colors_name = "bullfinch"
 
 fun <sid>hi(group, gui_fg, gui_bg, attrs)
     if a:gui_fg != ""
-        exec "hi " . a:group . " guifg=#" . a:gui_fg
+        exec "hi " . a:group . " guifg=" . a:gui_fg
     endif
     if a:gui_bg != ""
-        exec "hi " . a:group . " guibg=#" . a:gui_bg
+        exec "hi " . a:group . " guibg=" . a:gui_bg
     endif
     if a:attrs != ""
         exec "hi " . a:group . " gui=" . a:attrs . " cterm=" . a:attrs
@@ -23,19 +23,19 @@ fun <sid>hi(group, gui_fg, gui_bg, attrs)
 endfun
 
 
-let s:ui        = "000000"
+let s:ui        = "#000000"
 
-let s:text      = "000000"
-let s:faded     = "666666" " faded text
-let s:inversed  = "ffffff" " inversed text
-let s:attractive= "f4cf86" " b88853
+let s:text      = "#000000"
+let s:faded     = "#666666" " faded text
+let s:inversed  = "#ffffff" " inversed text
+let s:attractive= "#f4cf86" " b88853
 
-let s:bground   = "ffdab9"
-let s:accent    = "d3b695" " highlighted bground
-let s:alert     = "fe3a36" " red alert
+let s:bground   = "#ffdab9"
+let s:accent    = "#d3b695" " highlighted bground
+let s:alert     = "#fe3a36" " red alert
 
-let s:keyword   = "406090"
-let s:literal   = "c00058"
+let s:keyword   = "#406090"
+let s:literal   = "#c00058"
 let s:id        = s:text
 
 " attrs : bold, reverse, underline
@@ -43,7 +43,7 @@ let s:id        = s:text
 call <sid>hi("Normal",          s:text, s:bground, "")
 call <sid>hi("LineNr",          s:faded, "", "")
 call <sid>hi("CursorLineNr",    s:text, "", "")
-call <sid>hi("CursorLine",      "", s:bground, "")
+call <sid>hi("CursorLine",      "", "NONE", "")
 call <sid>hi("CursorColumn",    "", "", "")
 call <sid>hi("Search",          "", s:accent, "")
 call <sid>hi("IncSearch",       "", "", "reverse")
@@ -55,7 +55,7 @@ call <sid>hi("ErrorMsg",        s:inversed, s:alert, "")
 " pseudos
 call <sid>hi("VertSplit",       s:bground, s:ui, "bold")
 call <sid>hi("WildMenu",        s:text, s:attractive, "bold")
-call <sid>hi("StatusLine",      "", "0a9dff", "bold")
+call <sid>hi("StatusLine",      "", "#0a9dff", "bold")
 
 " syntax
 call <sid>hi("Comment",         s:faded, "", "")
